@@ -1,0 +1,93 @@
+// style section oscars------------------------------------------------------------------
+.site-footer {
+    animation: fadeInFromBottom 2s ease-out forwards;
+    flex-direction: column;
+    padding-top: 11em;
+  
+    &::before {
+      left: 9em;
+      top: 5em;
+      animation: rotate 10s linear infinite; // Animation de rotation en continu
+    }
+  
+    &::after {
+      bottom: 44em;
+      animation: rotate 10s linear infinite; // Animation de rotation en continu
+    }
+  
+    .oscars {
+      display: flex;
+      padding-bottom: 21em;
+      justify-content: center;
+    }
+  
+    .oscarstitre {
+      width: 61%;
+      height: 355px;
+      background-repeat: no-repeat; /* Pour empêcher la répétition de l'image de fond */
+      background-size: cover;
+      padding: 20px;
+      display: flex;
+      flex-direction: row;
+  
+      h3 {
+        text-align: left; /* Pour centrer le texte à gauche */
+        background-image: url(../foce/assets/images/Rectangle-Orange.png);
+        color: #FFF5E9;
+        font-size: 3rem;
+        background-repeat: no-repeat;
+        background-size: contain;
+        padding: 1em 2em;
+        margin: 0;
+        background-position: center;
+      }
+    }
+  
+    .oscarsimg {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 6em;
+    }
+  }
+  
+  @media (max-width: 421px) {
+    .site-footer {
+      padding-top: 5em; // Réduit le padding supérieur pour mobile
+  
+      &::before {
+        left: 4em; // Ajuste la position de l'élément avant pour mobile
+        top: 2em; // Ajuste la position de l'élément avant pour mobile
+      }
+  
+      &::after {
+        bottom: 22em; // Ajuste la position de l'élément après pour mobile
+      }
+  
+      .oscars {
+        flex-direction: column; // Aligne les éléments en colonne pour mobile
+        padding-bottom: 10em; // Réduit le padding inférieur pour mobile
+        align-items: center; // Centre les éléments horizontalement
+      }
+  
+      .oscarstitre {
+        width: 100%; // Occupe toute la largeur disponible
+        height: auto; // Laisse la hauteur s'ajuster automatiquement
+        padding: 1em; // Réduit le padding pour mobile
+        flex-direction: column; // Aligne les éléments en colonne pour mobile
+  
+        h3 {
+          text-align: center; // Centre le texte pour mobile
+          font-size: 2rem; // Réduit la taille de police pour mobile
+          padding: 1em;
+          background-size: 395px 260px;
+        }
+      }
+  
+      .oscarsimg {
+        padding-bottom: 2em; // Réduit le padding pour mobile
+      }
+    }
+  }
+  
+  

@@ -1,0 +1,27 @@
+.story h2 {
+  animation: fadeInFromBottom 2s ease-out forwards;
+}
+.story h2::after {
+  left: -416px;
+  transform-origin: 50% 43%;
+  animation: fadeInFromBottom 2s ease-out forwards, rotate 10s linear infinite;
+  animation-delay: 0s, 2s;
+}
+.story h2::before {
+  left: -460px;
+  animation: fadeInFromBottom 2s ease-out forwards;
+}
+.story .story__titre {
+  opacity: 0;
+  display: block;
+}
+.story .story__titre.visible {
+  animation: fadeInFromBottom 300ms ease-out forwards;
+}
+.story .story__article::after {
+  animation: fadeInFromBottom 2s ease-out forwards, rotate 10s linear infinite;
+  animation-delay: 0s, 2s;
+}
+.story .story__article::before {
+  animation: fadeInFromBottom 2s ease-out forwards;
+}/*# sourceMappingURL=style-histoire.css.map */

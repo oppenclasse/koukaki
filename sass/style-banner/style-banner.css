@@ -1,0 +1,37 @@
+.banner {
+  position: relative;
+  min-height: 806px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  animation: fadeInFromTop 1000ms ease-out forwards;
+}
+.banner video#background-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  animation-delay: 2s;
+}
+.banner img {
+  margin-top: -10%;
+  width: 50%;
+  z-index: 1;
+  position: relative;
+}
+.banner img.logo {
+  animation: fadeInFromBottom 1500ms ease-in-out, float 1.5s ease-in-out infinite;
+  animation-delay: 0s, 1500ms;
+}
+
+@media all and (max-width: 768px) {
+  .banner video#background-video {
+    display: none;
+  }
+}/*# sourceMappingURL=style-banner.css.map */

@@ -1,0 +1,505 @@
+@charset "UTF-8";
+/*
+ Theme Name:  Fleurs d'orangers et chats errants - Oscars Short
+ Theme URI: https://www.koukaki.local
+ Author: Studio Koukaki
+ Author URI: https://www.koukaki.local
+ Template: foce
+ Description: Thème enfant à l'ocasion de la nomination aux Oscars Shorts
+ Version: 0.1
+ */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes fadeInFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.banner {
+  position: relative;
+  min-height: 806px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  animation: fadeInFromTop 1000ms ease-out forwards;
+}
+.banner video#background-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  animation-delay: 2s;
+}
+.banner img {
+  margin-top: -10%;
+  width: 50%;
+  z-index: 1;
+  position: relative;
+}
+.banner img.logo {
+  animation: fadeInFromBottom 1500ms ease-in-out, float 1.5s ease-in-out infinite;
+  animation-delay: 0s, 1500ms;
+}
+
+@media all and (max-width: 768px) {
+  .banner video#background-video {
+    display: none;
+  }
+}
+.story h2 {
+  animation: fadeInFromBottom 2s ease-out forwards;
+}
+.story h2::after {
+  left: -416px;
+  transform-origin: 50% 43%;
+  animation: fadeInFromBottom 2s ease-out forwards, rotate 10s linear infinite;
+  animation-delay: 0s, 2s;
+}
+.story h2::before {
+  left: -460px;
+  animation: fadeInFromBottom 2s ease-out forwards;
+}
+.story .story__titre {
+  opacity: 0;
+  display: block;
+}
+.story .story__titre.visible {
+  animation: fadeInFromBottom 300ms ease-out forwards;
+}
+.story .story__article::after {
+  animation: fadeInFromBottom 2s ease-out forwards, rotate 10s linear infinite;
+  animation-delay: 0s, 2s;
+}
+.story .story__article::before {
+  animation: fadeInFromBottom 2s ease-out forwards;
+}
+
+.story #place {
+  background-image: none;
+}
+.story #place::before {
+  content: "";
+  position: absolute;
+  left: 0; /* ajustez selon vos besoins */
+  width: 100%; /* ajustez selon vos besoins */
+  height: 32%; /* ajustez selon vos besoins */
+  background-image: url("../foce/assets/images/Studio_Koukaki-image_place.png");
+  background-size: cover; /* ajustez selon vos besoins */
+  background-position: center; /* ajustez selon vos besoins */
+  animation: fadeInFromBottom 2s ease-out forwards;
+}
+.story #place h3 {
+  animation: fadeInFromBottom 2s ease-out forwards;
+}
+.story #place h3::before, .story #place h3::after {
+  content: "";
+  position: absolute;
+  transition: transform 5s ease-out;
+  transition-delay: 500ms;
+  background-repeat: no-repeat;
+  background-position: center; /* ajustez selon vos besoins */
+  filter: blur(12px);
+}
+.story #place h3::before {
+  background-image: url("../foce/assets/images/big_cloud.png");
+  top: -140px;
+  right: -830px;
+  width: 317px;
+  height: 140px;
+}
+.story #place h3::after {
+  background-image: url("../foce/assets/images/little_cloud.png");
+  top: 59px;
+  right: -550px;
+  width: 147px;
+  height: 63px;
+}
+.story #place h3.visible::before {
+  transform: translateX(-500px);
+}
+.story #place h3.visible::after {
+  transform: translateX(-450px);
+}
+.story #place p {
+  z-index: 1;
+}
+
+nav {
+  background: #FFD5A2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  font-size: calc(0.5rem + 1.5vw);
+  position: relative;
+  height: 65px;
+}
+nav ul {
+  justify-content: space-between;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  flex-direction: column;
+  background: #FFF5E9;
+  width: 100%;
+  text-align: center;
+  transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  margin: 0;
+  height: calc(100vh - 100%);
+  background-image: url("./images/Hibiscus-nav.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-size: 240px 240px;
+  background-position: bottom right;
+}
+nav ul li {
+  list-style: none;
+  position: relative;
+  padding: 0px 0;
+  font-size: calc(64px + 1.5vw);
+}
+nav .stud {
+  padding-top: 80px;
+  font-size: x-small;
+  text-transform: uppercase;
+}
+nav a,
+nav a:visited {
+  color: black;
+  text-decoration: none;
+}
+nav a:hover {
+  text-shadow: 0px 0px 14px #FF5C00;
+}
+nav h2 {
+  background-image: none;
+  font-size: calc(0.5rem + 1.5vw);
+  margin: 0 auto;
+  background-color: #FFD5A2;
+  display: flex;
+  align-items: center;
+  padding: 0px;
+}
+nav.active ul {
+  max-height: 100vh;
+  opacity: 1;
+  margin: 0;
+}
+
+#icons {
+  cursor: pointer;
+  display: block;
+  font-size: calc(0.5rem + 1.5vw);
+  background: none;
+  border: none;
+}
+#icons:before {
+  content: "☰";
+}
+.active #icons:before {
+  content: "✕";
+}
+
+.his::after {
+  content: "";
+  display: inline-block;
+  background-image: url("./images/Sunflower.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 1.5em;
+  top: -0.5em;
+  width: 100px;
+  height: 100px;
+  animation: rotate 10s linear infinite;
+}
+.his::before {
+  content: "";
+  display: inline-block;
+  background-image: url("./images/cat-violet.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 2.5em;
+  top: 0em;
+  width: 90px;
+  height: 90px;
+  animation: float 1.5s ease-in-out infinite;
+}
+
+.imglogo {
+  background-image: url("./images/Image logo en paralax.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 80px;
+}
+
+.per::after {
+  content: "";
+  display: inline-block;
+  background-image: url("./images/Random Flower.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: -0.2em;
+  top: 0.8em;
+  width: 50px;
+  height: 50px;
+  animation: rotate 10s linear infinite;
+}
+.per::before {
+  content: "";
+  display: inline-block;
+  background-image: url("./images/Orchid.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: -0.9em;
+  top: -2em;
+  width: 100px;
+  height: 100px;
+  animation: rotate 10s linear infinite;
+}
+
+.lie::after {
+  content: "";
+  display: inline-block;
+  background-image: url("./images/cat-noir.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  top: 0em;
+  right: 1.5em;
+  animation: float 1.5s ease-in-out infinite;
+}
+.lie::before {
+  content: "";
+  display: inline-block;
+  background-image: url("./images/Flower.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  left: 1.2em;
+  top: 0em;
+  animation: rotate 10s linear infinite;
+}
+
+.stu::before {
+  content: "";
+  display: inline-block;
+  background-image: url("./images/cat-orange.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  left: 0.3em;
+  top: 1em;
+  animation: float 1.5s ease-in-out infinite;
+}
+
+@media (max-width: 421px) {
+  .lie::after,
+  .his::before,
+  .his::after {
+    display: none;
+  }
+  nav .stud {
+    padding-top: 115px;
+    font-size: x-small;
+    text-transform: uppercase;
+  }
+  nav .stud a {
+    font-size: 0.8rem;
+  }
+  nav li, a {
+    font-size: calc(1rem + 1vw);
+  }
+}
+#characters {
+  animation: fadeInFromBottom 2s ease-out forwards;
+}
+
+.swiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 500px;
+  height: 520px;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+}
+
+.story {
+  max-width: 1440px;
+}
+
+#studio .story__titre {
+  display: inline-block;
+  padding-left: 20px;
+  opacity: 0;
+}
+#studio .story__titre.visible {
+  animation: fadeInFromBottom 300ms ease-out forwards;
+}
+#studio .story__titre.deux.visible {
+  animation: fadeInFromBottom 300ms ease-out forwards;
+  animation-delay: 300ms;
+}
+#studio h2 {
+  animation: fadeInFromBottom 2s ease-out forwards;
+}
+#studio h2::before {
+  animation: rotate 10s linear infinite; /* Animation fleur */
+  transform-origin: 50% 44%;
+}
+#studio h2::after {
+  animation: rotate 10s linear infinite; /* Animation fleur */
+  transform-origin: 50% 42%;
+}
+
+@media (max-width: 421px) {
+  #studio h2 {
+    background-size: 310px 190px;
+  }
+}
+.site-footer {
+  animation: fadeInFromBottom 2s ease-out forwards;
+  flex-direction: column;
+  padding-top: 11em;
+}
+.site-footer::before {
+  left: 9em;
+  top: 5em;
+  animation: rotate 10s linear infinite;
+}
+.site-footer::after {
+  bottom: 44em;
+  animation: rotate 10s linear infinite;
+}
+.site-footer .oscars {
+  display: flex;
+  padding-bottom: 21em;
+  justify-content: center;
+}
+.site-footer .oscarstitre {
+  width: 61%;
+  height: 355px;
+  background-repeat: no-repeat; /* Pour empêcher la répétition de l'image de fond */
+  background-size: cover;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+}
+.site-footer .oscarstitre h3 {
+  text-align: left; /* Pour centrer le texte à gauche */
+  background-image: url(../foce/assets/images/Rectangle-Orange.png);
+  color: #FFF5E9;
+  font-size: 3rem;
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding: 1em 2em;
+  margin: 0;
+  background-position: center;
+}
+.site-footer .oscarsimg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 6em;
+}
+
+@media (max-width: 421px) {
+  .site-footer {
+    padding-top: 5em;
+  }
+  .site-footer::before {
+    left: 4em;
+    top: 2em;
+  }
+  .site-footer::after {
+    bottom: 22em;
+  }
+  .site-footer .oscars {
+    flex-direction: column;
+    padding-bottom: 10em;
+    align-items: center;
+  }
+  .site-footer .oscarstitre {
+    width: 100%;
+    height: auto;
+    padding: 1em;
+    flex-direction: column;
+  }
+  .site-footer .oscarstitre h3 {
+    text-align: center;
+    font-size: 2rem;
+    padding: 1em;
+    background-size: 395px 260px;
+  }
+  .site-footer .oscarsimg {
+    padding-bottom: 2em;
+  }
+}/*# sourceMappingURL=style.css.map */

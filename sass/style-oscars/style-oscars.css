@@ -1,0 +1,79 @@
+@charset "UTF-8";
+.site-footer {
+  animation: fadeInFromBottom 2s ease-out forwards;
+  flex-direction: column;
+  padding-top: 11em;
+}
+.site-footer::before {
+  left: 9em;
+  top: 5em;
+  animation: rotate 10s linear infinite;
+}
+.site-footer::after {
+  bottom: 44em;
+  animation: rotate 10s linear infinite;
+}
+.site-footer .oscars {
+  display: flex;
+  padding-bottom: 21em;
+  justify-content: center;
+}
+.site-footer .oscarstitre {
+  width: 61%;
+  height: 355px;
+  background-repeat: no-repeat; /* Pour empêcher la répétition de l'image de fond */
+  background-size: cover;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+}
+.site-footer .oscarstitre h3 {
+  text-align: left; /* Pour centrer le texte à gauche */
+  background-image: url(../foce/assets/images/Rectangle-Orange.png);
+  color: #FFF5E9;
+  font-size: 3rem;
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding: 1em 2em;
+  margin: 0;
+  background-position: center;
+}
+.site-footer .oscarsimg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 6em;
+}
+
+@media (max-width: 421px) {
+  .site-footer {
+    padding-top: 5em;
+  }
+  .site-footer::before {
+    left: 4em;
+    top: 2em;
+  }
+  .site-footer::after {
+    bottom: 22em;
+  }
+  .site-footer .oscars {
+    flex-direction: column;
+    padding-bottom: 10em;
+    align-items: center;
+  }
+  .site-footer .oscarstitre {
+    width: 100%;
+    height: auto;
+    padding: 1em;
+    flex-direction: column;
+  }
+  .site-footer .oscarstitre h3 {
+    text-align: center;
+    font-size: 2rem;
+    padding: 1em;
+    background-size: 395px 260px;
+  }
+  .site-footer .oscarsimg {
+    padding-bottom: 2em;
+  }
+}/*# sourceMappingURL=style-oscars.css.map */

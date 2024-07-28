@@ -1,0 +1,45 @@
+// effet section l'histoire--------------------------------------------------------
+
+
+.story {
+    h2 {
+      &::after {
+        left: -416px;
+        transform-origin: 50% 43%; 
+        animation: fadeInFromBottom 2s ease-out forwards, rotate 10s linear infinite;
+        animation-delay: 0s, 2s;
+      }
+  
+      &::before {
+        left: -460px;
+        animation: fadeInFromBottom 2s ease-out forwards;
+      }
+  
+      // effet sur titre h2 
+      // Cacher le contenu initialement
+      animation: fadeInFromBottom 2s ease-out forwards;
+    }
+  
+    .story__titre {
+      opacity: 0;
+  
+      // Appliquer l'animation lorsque la classe .visible est ajoutée
+      &.visible {
+        animation: fadeInFromBottom 300ms ease-out forwards;
+      }
+  
+      display: block;
+    }
+  
+    .story__article {
+      &::after {
+        animation: fadeInFromBottom 2s ease-out forwards, rotate 10s linear infinite;
+        animation-delay: 0s, 2s;
+      }
+  
+      &::before {
+        animation: fadeInFromBottom 2s ease-out forwards;
+      }
+    }
+  }
+  

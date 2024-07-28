@@ -1,0 +1,29 @@
+#studio .story__titre {
+  display: inline-block;
+  padding-left: 20px;
+  opacity: 0;
+}
+#studio .story__titre.visible {
+  animation: fadeInFromBottom 300ms ease-out forwards;
+}
+#studio .story__titre.deux.visible {
+  animation: fadeInFromBottom 300ms ease-out forwards;
+  animation-delay: 300ms;
+}
+#studio h2 {
+  animation: fadeInFromBottom 2s ease-out forwards;
+}
+#studio h2::before {
+  animation: rotate 10s linear infinite; /* Animation fleur */
+  transform-origin: 50% 44%;
+}
+#studio h2::after {
+  animation: rotate 10s linear infinite; /* Animation fleur */
+  transform-origin: 50% 42%;
+}
+
+@media (max-width: 421px) {
+  #studio h2 {
+    background-size: 310px 190px;
+  }
+}/*# sourceMappingURL=style-studio.css.map */

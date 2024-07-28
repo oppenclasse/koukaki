@@ -1,0 +1,49 @@
+.story #place {
+  background-image: none;
+}
+.story #place::before {
+  content: "";
+  position: absolute;
+  left: 0; /* ajustez selon vos besoins */
+  width: 100%; /* ajustez selon vos besoins */
+  height: 32%; /* ajustez selon vos besoins */
+  background-image: url("../foce/assets/images/Studio_Koukaki-image_place.png");
+  background-size: cover; /* ajustez selon vos besoins */
+  background-position: center; /* ajustez selon vos besoins */
+  animation: fadeInFromBottom 2s ease-out forwards;
+}
+.story #place h3 {
+  animation: fadeInFromBottom 2s ease-out forwards;
+}
+.story #place h3::before, .story #place h3::after {
+  content: "";
+  position: absolute;
+  transition: transform 5s ease-out;
+  transition-delay: 500ms;
+  background-repeat: no-repeat;
+  background-position: center; /* ajustez selon vos besoins */
+  filter: blur(12px);
+}
+.story #place h3::before {
+  background-image: url("../foce/assets/images/big_cloud.png");
+  top: -140px;
+  right: -830px;
+  width: 317px;
+  height: 140px;
+}
+.story #place h3::after {
+  background-image: url("../foce/assets/images/little_cloud.png");
+  top: 59px;
+  right: -550px;
+  width: 147px;
+  height: 63px;
+}
+.story #place h3.visible::before {
+  transform: translateX(-500px);
+}
+.story #place h3.visible::after {
+  transform: translateX(-450px);
+}
+.story #place p {
+  z-index: 1;
+}/*# sourceMappingURL=style-lieu.css.map */
